@@ -89,13 +89,13 @@ class CartItem extends React.Component {
                             alt="increase"
                             className="action-icons"
                             src="https://img-premium.flaticon.com/png/512/992/992651.png?token=exp=1621017251~hmac=e4f50b4edf771dd804128b77c9281b3d"
-                            onClick={this.IncreaseQty}
+                            onClick={() => this.props.onIncreaseQty(this.props.product)}
                         />
                         <img
                             alt="decrease"
                             className="action-icons"
                             src="https://t4.ftcdn.net/jpg/03/16/36/03/240_F_316360373_uWcj5rZxsUbmoAogMfow8EZhUOn7FTM0.jpg"
-                            onClick={this.DecreaseQty}
+                            onClick={() => this.props.onDecreaseQty(this.props.product)}
                         />
                         <img
                             alt="delete"
