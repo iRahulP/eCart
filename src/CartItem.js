@@ -17,7 +17,24 @@ class CartItem extends React.Component {
     //function for Increasing Qty
     //arrow function auto binds this to function
     IncreaseQty = () => {
-        console.log('test inc', this.state);
+        //this.state.qty += 1;
+        console.log('test inc', this.state.qty);
+        //setState form 1
+        this.setState({
+            //shallow merging
+            qty: this.state.qty + 1
+        });
+    }
+
+    DecreaseQty = () => {
+        //this.state.qty -= 1;
+        console.log('test dec', this.state.qty);
+        //setState form 2
+        this.setState((prevState) => {
+            return {
+                qty: prevState.qty - 1
+            }
+        });
     }
 
     render() {
@@ -43,6 +60,7 @@ class CartItem extends React.Component {
                             alt="decrease"
                             className="action-icons"
                             src="https://t4.ftcdn.net/jpg/03/16/36/03/240_F_316360373_uWcj5rZxsUbmoAogMfow8EZhUOn7FTM0.jpg"
+                            onClick={this.DecreaseQty}
                         />
                         <img
                             alt="delete"
