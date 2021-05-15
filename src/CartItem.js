@@ -72,7 +72,7 @@ class CartItem extends React.Component {
         console.log(this.props);
         console.log('render');
         // const { price, title, qty } = this.state;
-        const { price, title, qty } = this.props;
+        const { price, title, qty } = this.props.product;
 
         return (
             <div className="cart-item">
