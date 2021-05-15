@@ -12,6 +12,31 @@ class CartItem extends React.Component {
             qty: 1,
             img: ''
         }
+        // this.testing();
+    }
+
+    //promise to simulate API calls
+    testing() {
+        const promise = new Promise((resolve, reject) => {
+            //calling after 5 sec
+            setTimeout(() => {
+                resolve('done');
+            }, 5000);
+        })
+        promise.then(() => {
+            //setState acts like a synchronous call
+            this.setState({
+                qty: this.state.qty + 10
+            });
+            this.setState({
+                qty: this.state.qty + 10
+            });
+            this.setState({
+                qty: this.state.qty + 10
+            });
+
+            console.log('state', this.state);
+        });
     }
 
     //function for Increasing Qty
@@ -27,9 +52,15 @@ class CartItem extends React.Component {
     }
 
     DecreaseQty = () => {
+
+        const { qty } = this.state;
+
+        if (qty === 0) {
+            return;
+        }
         //this.state.qty -= 1;
         console.log('test dec', this.state.qty);
-        //setState form 2
+        //setState form 2 for prevState usage
         this.setState((prevState) => {
             return {
                 qty: prevState.qty - 1
@@ -38,6 +69,7 @@ class CartItem extends React.Component {
     }
 
     render() {
+        console.log('render');
         const { price, title, qty } = this.state;
         return (
             <div className="cart-item">
