@@ -1,16 +1,17 @@
 import React from 'react';
 
-class Navbar extends React.Component {
-    render() {
-        return (
-            <div style={styles.nav}>
-                <div style={styles.cartIconContainer}>
-                    <img style={styles.cartIcon} src="https://t3.ftcdn.net/jpg/03/03/05/78/240_F_303057896_UOqpWEaLAEwRVFlh5OUq0RIB3EfHNnAi.jpg" alt="cart-icon" />
-                    <span style={styles.cartCount}>3</span>
-                </div>
-            </div >
-        )
-    }
+//class Navbar extends React.Component {
+
+//changed to functional Component
+const Navbar = () => {
+    return (
+        <div style={styles.nav}>
+            <div style={styles.cartIconContainer}>
+                <img style={styles.cartIcon} src="https://t3.ftcdn.net/jpg/03/03/05/78/240_F_303057896_UOqpWEaLAEwRVFlh5OUq0RIB3EfHNnAi.jpg" alt="cart-icon" />
+                <span style={styles.cartCount}>3</span>
+            </div>
+        </div >
+    )
 }
 
 const styles = {
@@ -24,7 +25,7 @@ const styles = {
         background: '#4267b2',
         display: 'flex',
         justifyContent: 'flex-end',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     cartIconContainer: {
         position: 'relative'
