@@ -3,12 +3,12 @@ import React from 'react';
 //class Navbar extends React.Component {
 
 //changed to functional Component
-const Navbar = () => {
+const Navbar = (props) => {
     return (
         <div style={styles.nav}>
             <div style={styles.cartIconContainer}>
                 <img style={styles.cartIcon} src="https://t3.ftcdn.net/jpg/03/03/05/78/240_F_303057896_UOqpWEaLAEwRVFlh5OUq0RIB3EfHNnAi.jpg" alt="cart-icon" />
-                <span style={styles.cartCount}>3</span>
+                <span style={styles.cartCount}>{props.count}</span>
             </div>
         </div >
     )
