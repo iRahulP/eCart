@@ -85,13 +85,23 @@ class App extends React.Component {
   }
 
   handleDeleteProduct = (id) => {
-    const { products } = this.state;
-    const items = products.filter((item) =>
-      item.id !== id
-    );
-    this.setState({
-      products: items
-    });
+    // const { products } = this.state;
+    // const items = products.filter((item) =>
+    //   item.id !== id
+    // );
+    // this.setState({
+    //   products: items
+    // });
+
+    const ref = this.db.collection('products').doc(id);
+    ref
+      .delete()
+      .then(() => {
+        console.log('Deleted Succesfully');
+      })
+      .catch((err) => {
+        console.log('Erorr : ', err);
+      });
   }
 
 
@@ -139,7 +149,7 @@ class App extends React.Component {
     return (
       <div className="App" >
         <Navbar count={this.getCartCount()} />
-        {/* <button onClick={this.addProduct} style={{ padding: 20, fontSize: 20 }}>Add a product</button> */}
+        <button onClick={this.addProduct} style={{ padding: 20, fontSize: 20 }}>Add a product</button>
         <Cart
           products={products}
           onIncreaseQty={this.handleIncreaseQty}
