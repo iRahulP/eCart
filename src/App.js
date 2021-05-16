@@ -28,7 +28,7 @@ class App extends React.Component {
           qty: 1,
           img: 'https://images.unsplash.com/photo-1614445334427-6316337d7556?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJpdmF0ZSUyMGpldHxlbnwwfDJ8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
           id: 3
-        },
+        }
       ]
     }
   }
