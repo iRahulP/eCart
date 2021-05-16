@@ -9,7 +9,8 @@ class App extends React.Component {
     //super() calls constructor of Parent class i.e React.Component
     super();
     this.state = {
-      products: []
+      products: [],
+      loading: true
     }
   }
 
@@ -27,7 +28,8 @@ class App extends React.Component {
         });
 
         this.setState({
-          products: products
+          products: products,
+          loading: false
         })
       });
 
@@ -91,7 +93,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { products } = this.state;
+    const { products, loading } = this.state;
     return (
       <div className="App" >
         <Navbar count={this.getCartCount()} />
@@ -101,6 +103,7 @@ class App extends React.Component {
           onDecreaseQty={this.handleDecreaseQty}
           onDeleteItem={this.handleDeleteProduct}
         />
+        { loading && <h3>Loading Products ...</h3>}
         <div style={{ fontSize: 20, padding: 10, fontWeight: 'bold' }}>Total : {this.getCartPrice()}$</div>
       </div>
     );
