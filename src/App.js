@@ -84,7 +84,7 @@ class App extends React.Component {
     let cartTotal = 0;
 
     products.map((product) => {
-      cartTotal += cartTotal + product.qty * product.price;
+      cartTotal = cartTotal + product.qty * product.price;
       return cartTotal;
     });
     return cartTotal;
